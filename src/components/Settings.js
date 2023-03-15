@@ -6,11 +6,13 @@ export const Settings = () => {
 
     // to be implemented in context
     const { changeGreeting } = useContext(UserContext)
-
+    const handleChange = (e)=>{
+        changeGreeting(e.target.value)
+    }
     return (
         <div style={{ border: '5px solid red', padding: '8px' }} id="settings">
             <h4>Settings</h4>
-            <input type={'text'} />
+            <input type={'text'} onChange={handleChange}/>
         </div>
     )
 }
